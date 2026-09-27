@@ -71,7 +71,7 @@ def handler(event, context):
 
 def call_openai_api(user_message):
     """使用 OpenAI GPT API"""
-    client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
     response = client.chat.completions.create(
         model="gpt-5.6-terra",
